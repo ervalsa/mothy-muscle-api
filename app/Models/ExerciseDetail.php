@@ -12,6 +12,7 @@ class ExerciseDetail extends Model
     protected $table = 'exercise_detail';
 
     protected $fillable = [
+        'exercise_id',
         'instruction',
         'calories_burned_description',
         'photo_path'

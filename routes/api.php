@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\ExerciseController;
 use App\Http\Controllers\Api\LoginController;
+use App\Http\Controllers\Api\PhotoController;
 use App\Http\Controllers\Api\RegisterController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -28,3 +29,6 @@ Route::post('register', [RegisterController::class, 'store']);
 // Exercise
 Route::get('exercise', [ExerciseController::class, 'index']);
 Route::get('exercise/{id}', [ExerciseController::class, 'show']);
+
+// Photo
+Route::post('exercise/{exercise_id}/upload-photo', [PhotoController::class, 'store']);
