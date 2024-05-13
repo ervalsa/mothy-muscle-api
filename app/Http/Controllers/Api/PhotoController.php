@@ -31,8 +31,8 @@ class PhotoController extends Controller
                 Storage::delete($exerciseDetail->photo_path);
             }
 
-            $path = $request->file('photo')->store('public/exercise_photos');
-            $exerciseDetail->photo_path = $path;
+            $path = $request->file('photo')->store('exercise_photos', 'public');
+            $exerciseDetail->photo_path = 'storage/' . $path;
             $exerciseDetail->save();
 
             return response()->json([
